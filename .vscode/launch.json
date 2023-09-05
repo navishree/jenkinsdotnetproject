@@ -1,0 +1,96 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Query sentinel1 index",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "${workspaceRoot}/Terradue.OpenSearch.Client/bin/Debug/net5.0/OpenSearchClient",
+            "args": [
+                "https://catalog.terradue.com/sentinel1/search",
+                "enclosure"
+            ],
+            "cwd": "${workspaceRoot}",
+            "stopAtEntry": false,
+            "console": "internalConsole"
+        },
+        {
+            "name": "Query sentinel2 specific values",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "${workspaceRoot}/Terradue.OpenSearch.Client/bin/Debug/net5.0/OpenSearchClient",
+            "args": [
+                "-m", "EOP",
+                "-v",
+                "https://catalog.terradue.com/sentinel2/search",
+                "vs:'tileid'"
+            ],
+            "cwd": "${workspaceRoot}",
+            "stopAtEntry": false,
+            "console": "internalConsole"
+        },
+        {
+            "name": "Query uid",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "${workspaceRoot}/Terradue.OpenSearch.Client/bin/Debug/net5.0/OpenSearchClient",
+            "args": [
+                "-m", "EOP",
+                "-v",
+                "-p",
+                "uid=ASA_IMS_1PNESA20061204_024611_000000152053_00290_24893_0000",
+                "https://catalog.terradue.com/esar/search",
+                "identifier"
+            ],
+            "cwd": "${workspaceRoot}",
+            "stopAtEntry": false,
+            "console": "internalConsole"
+        },
+        {
+            "name": "Query Sentinel3 on ONDA",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "${workspaceRoot}/Terradue.OpenSearch.Client/bin/Debug/net5.0/OpenSearchClient",
+            "args": [
+                "-m", "Scihub",
+                "-v",
+                "-p",
+                "psn=*Sentinel-3*",
+                "-p",
+                "count=1",
+                "https://catalogue.onda-dias.eu/dias-catalogue",
+                "{}"
+            ],
+            "cwd": "${workspaceRoot}",
+            "stopAtEntry": false,
+            "console": "internalConsole"
+        },
+        {
+            "name": "Query Sentinel3 on Sobloo",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "${workspaceRoot}/Terradue.OpenSearch.Client/bin/Debug/net472/OpenSearchClient",
+            "args": [
+                "-m", "Scihub",
+                "-v",
+                "-p",
+                "uid=S1A_IW_SLC__1SDV_20201017T170438_20201017T170505_034839_040FAE_2CE2",
+                "-p",
+                "count=1",
+                "https://sobloo.eu/api/v1/services/search",
+                "{}"
+            ],
+            "cwd": "${workspaceRoot}",
+            "stopAtEntry": false,
+            "console": "internalConsole"
+        }
+    ]
+}

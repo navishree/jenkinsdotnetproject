@@ -1,0 +1,20 @@
+<Project ToolsVersion="Current" Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Terradue.OpenSearch.Client\Terradue.OpenSearch.Client.csproj">
+    </ProjectReference>
+    <ProjectReference Include="..\Terradue.OpenSearch.Model\Terradue.OpenSearch.Model.csproj">
+    </ProjectReference>
+    <ProjectReference Include="..\Terradue.OpenSearch.Model.Base\Terradue.OpenSearch.Model.Base.csproj">
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Terradue.OpenSearch" Version="1.17.*" />
+    <PackageReference Include="nunit" Version="3.13.3" />
+    <PackageReference Include="NUnit3TestAdapter" Version="4.2.1" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.1.0" />
+  </ItemGroup>
+</Project>
